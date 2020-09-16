@@ -13,15 +13,17 @@ export default (reducer, actions, defaultValue) => {
         }
 
         return (
-            <Context.Provider value={{ state, ...boundActions }}>
-                {children}
-            </Context.Provider>
+            <Context.Provider value={{ state, ...boundActions }}>{children}</Context.Provider>
         );
     };
 
     return { Context, Provider };
 };
 
-// provider make our data available
-// context get access to our child object
+{
+    /*
+     provider make our data available
+ context get access to our child object
+ */
+}
 

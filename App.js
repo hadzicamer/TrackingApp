@@ -39,7 +39,7 @@ const App = createAppContainer(switchNavigator);
 export default () => {
     return (
         <AuthProv>
-            <App ref={(navigator) => { setNavigator(navigator) }} />
+  <App ref={(navigator) => { setNavigator(navigator) }} />
         </AuthProv>
     );
 };

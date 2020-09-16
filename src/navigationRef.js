@@ -14,5 +14,6 @@ export const navigate=(routeName,params)=>{
     );
 };
 
-
-// changing state, showing different screen 
+{
+/* changing state, showing different screen */
+}
