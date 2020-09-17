@@ -7,25 +7,25 @@ import { NavigationEvents } from 'react-navigation';
 
 const SignupScreen = ({ navigation }) => {
 
-    const { state, signup,clearErrorMessage,tryAutomaticSignin} = useContext(Context);
+    const { state, signup, clearErrorMessage, tryAutomaticSignin } = useContext(Context);
 
-    useEffect(()=>{
-tryAutomaticSignin();
-    },[]);
+    useEffect(() => {
+        tryAutomaticSignin();
+    }, []);
 
     return (
         <View style={styles.container}>
-            <NavigationEvents onWillBlur={clearErrorMessage}/>
-          <AuthForm
-          headerText="Sign up for tracker"
-          errorMessage={state.errorMessage}
-          ButtonText="Sign up"
-          onSubmit={signup}
-          />
-           <NavLink
-           routeName="Signin"
-           text="Already have an account? Sign in instead."
-           />
+            <NavigationEvents onWillBlur={clearErrorMessage} />
+            <AuthForm
+                headerText="Sign up for tracker"
+                errorMessage={state.errorMessage}
+                ButtonText="Sign up"
+                onSubmit={signup}
+            />
+            <NavLink
+                routeName="Signin"
+                text="Already have an account? Sign in instead."
+            />
         </View>
     );
 };
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginBottom: 200
     },
-  
+
 });
 
 export default SignupScreen;
