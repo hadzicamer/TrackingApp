@@ -22,7 +22,6 @@ router.post('/signin', async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    // findOne ce naci usera ili vratiti null
     if (!user) {
         return res.status(404).send({ error: "Email not found" });
     }

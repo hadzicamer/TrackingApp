@@ -14,11 +14,11 @@ const userSchema = new mongoose.Schema({
 
 });
 
-// prije nego sto sacuvamo usera hashirat cemo password 
+
 userSchema.pre('save', function (next) {
     const user = this;
     if (!this.isModified('password')) {
-        return next(); // kao continue u c#
+        return next(); 
     }
     bcrypt.genSalt(10, (err, salt) => {
         if (err) {
