@@ -1,8 +1,27 @@
 import axios from 'axios';
+import { AsyncStorage } from 'react-native';
 
-export default axios.create({
-baseURL:'http://b0e56dd3a815.ngrok.io'
+const instance=axios.create({
+    baseURL: 'http://ab8687431773.ngrok.io'
 });
+
+instance.interceptors.request.use(
+    async(config) => { 
+        const token=await AsyncStorage.getItem('token');
+        if(token){
+            config.headers.Authorization= `Bearer ${token}`;
+        }
+        return config;
+
+    },
+    err => { 
+        return Promise.reject(err);
+    }
+
+);
+
+export default instance;
+
 
 
 {/*
